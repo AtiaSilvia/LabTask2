@@ -1,0 +1,54 @@
+﻿
+@model Assignment1.EF.Order
+
+@{
+    ViewBag.Title = "OrderDetails";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>OrderDetails</h2>
+
+
+
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>CustomerID</th>
+        <th>Name</th>
+        <th>Status</th>
+
+    </tr>
+    <tr>
+        <td>@Model.ID</td>
+        <td>@Model.User.ID</td>
+        <td>@Model.User.Name</td>
+        <td>@Model.Status</td>
+
+
+    </tr>
+
+</table>
+<br />
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+
+    @foreach (var value in Model.OrderProducts)
+    {
+        <tr>
+            <td>@value.ProductID</td>
+            <td>@value.Product.Name</td>
+            <td>@value.Quantity</td>
+            <td>@value.Price</td>
+        </tr>
+
+    }
+</table>

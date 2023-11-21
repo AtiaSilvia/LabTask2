@@ -1,0 +1,32 @@
+﻿@model Assignment1.EF.User
+@{
+    ViewBag.Title = "CustomerOrderlist";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2>CustomerOrderlist</h2>
+
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>CustomerID</th>
+        <th>Status</th>
+        
+    </tr>
+
+    @foreach (var data in Model.Orders)
+    {
+        <tr>
+            <td>@data.ID</td>
+            <td>@data.CustomerID</td>
+            <td>@data.Status</td>
+
+        </tr>
+
+
+    }
+
+</table>
+<a href="/Customer/CheckOut/">CheckOut</a>

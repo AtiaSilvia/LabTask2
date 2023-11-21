@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "OrderList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>OrderList</h2>
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>CustomerID</th>
+        <th>Status</th>
+
+    </tr>
+
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@data.ID</td>
+            <td>@data.CustomerID</td>
+            <td>@data.Status</td>
+
+
+            <td><a class="btn btn-light" href="/Admin/OrderDetails/@data.ID">OrderDetails</a></td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Store";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2>Store</h2>
+
+
+
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category Name</th>
+        <th>Quantity</th>
+    </tr>
+
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@data.ID</td>
+            <td>@data.Name</td>
+            <td>@data.Price</td>
+            <td>@data.Category.Name</td>
+            <td>@data.Quantity</td>
+
+            <td><a class="btn btn-secondary" href="/Customer/AddToCart/@data.ID">Add to cart</a></td>
+          
+        </tr>
+
+
+    }
+
+</table>

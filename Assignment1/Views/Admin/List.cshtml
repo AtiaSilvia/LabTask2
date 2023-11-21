@@ -1,0 +1,40 @@
+﻿
+@model List<Assignment1.EF.Product>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>List</h2>
+<br />
+<a class="btn btn-warning" href="/Admin/Add">ADD</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category ID</th>
+        <th>Quantity</th>
+    </tr>
+
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@data.ID</td>
+            <td>@data.Name</td>
+            <td>@data.Price</td>
+            <td>@data.CategoryID</td>
+            <td>@data.Quantity</td>
+
+            <td><a class="btn btn-secondary" href="/Admin/Edit/@data.ID">Edit</a></td>
+            <td><a class="btn btn-danger" href="/Admin/Delete/@data.ID">Delete</a></td>
+        </tr>
+
+
+    }
+
+</table>
